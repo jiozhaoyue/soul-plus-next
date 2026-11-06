@@ -1,102 +1,151 @@
-# South Plus Forum Enhancer (凛+ 增强重构版)
+# SoulPlus-Next (魂+ Next)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-v101-brightgreen.svg)](southplus-enhancer.user.js)
-[![UserScript](https://img.shields.io/badge/UserScript-Tampermonkey%20%7C%20ScriptCat%20%7C%20Violentmonkey-orange.svg)](southplus-enhancer.user.js)
+[![Version](https://img.shields.io/badge/Version-v101-brightgreen.svg)](soul-plus-next.user.js)
+[![Userscript](https://img.shields.io/badge/Userscript-Tampermonkey%20%7C%20ScriptCat%20%7C%20Violentmonkey-orange.svg)](soul-plus-next.user.js)
+[![Auto Update](https://img.shields.io/badge/Auto--Update-GitHub%20Raw%20%26%20Actions-blueviolet.svg)](https://raw.githubusercontent.com/jiozhaoyue/soul-plus-next/main/soul-plus-next.user.js)
 
-针对南加/北加/东加/白加/魂加（South-Plus、North-Plus 等相关论坛）的高性能全功能体验增强油猴脚本。
+面向南加/魂加/北加/白加/东加等系列论坛（South-Plus、Soul-Plus、North-Plus 等相关镜像站）的现代全功能体验套件与脚本重构版。
 
-本项目基于原作者 **遠坂凛** 的 SleazyFork 脚本（ID: 454120，前身为 Chrome 扩展 `soul-plus-plus-chrome-extension`）进行重构、Bug 彻底修复、键盘交互与多镜像域名深度同步扩展，专为极致浏览体验而生。
-
----
-
-## 🌟 核心特色与功能
-
-### 1. ⚡ 免刷新交互与智能草稿保护
-- **购买免刷新**：自动获取帖子元数据并在原位异步完成购买，杜绝整页重新加载。
-- **免刷新回帖**：异步提交回帖，自动滚动至新楼层并更新页面状态。
-- **智能草稿恢复与清理（v101 修复增强）**：
-  - 自动实时在本地保存回帖草稿，意外关闭或切换页面不丢失。
-  - 成功回帖（包括免刷新回复）后**自动彻底清理草稿**，杜绝以往版本残留旧草稿反复弹出的问题。
-
-### 2. 🌙 沉浸式原生暗黑模式
-- 动态注入 `<meta name="darkreader-lock">`，彻底杜绝与第三方 Dark Reader 等反色扩展产生二次反色/文字发白冲突。
-- 原生声明 `color-scheme: dark`，统一浏览器滚动条与表单控件暗黑质感。
-- 修复原版 CSS 属性冗余语法错误（`color: color:`），杜绝样式解析警告。
-
-### 3. ⌨️ 极速键盘导航（带弹窗防误触）
-- `J` / `K` 键快速进行上一页 / 下一页跳转翻页。
-- **弹窗防误触保护（v101 增强）**：当处于大图图墙模式（PicWall）、设置弹窗（Rinsp Dialog）或搜索框交互时，自动屏蔽快捷键翻页，防止看图与配置时误翻页。
-
-### 4. 🌐 跨镜像域名配置双向无缝同步
-- 针对南+庞大的镜像域名群（`south-plus.net`, `south-plus.org`, `soul-plus.net`, `north-plus.net`, `white-plus.net` 等）：
-- 采用 `GM_getValue` 作为跨域配置的核心持久化源，解决传统 `localStorage` 仅限单域名生效、镜像站换网址后设置丢失或分裂的痛点。
-
-### 5. 🚀 渲染性能优化与 SFW 贤者安全模式
-- 引入现代 CSS `content-visibility: auto`，视口外楼层与长列表节点按需延迟渲染，大幅降低长贴内存占用并提升高刷新率滚动流畅度。
-- **SFW 贤者模式优化**：NSFW 图片即时滤镜脱敏，消除滚动懒加载图片时的明暗闪烁。
+本项目直接继承自经典浏览器扩展项目 [FetchTheMoon/soul-plus-plus-chrome-extension](https://github.com/FetchTheMoon/soul-plus-plus-chrome-extension)（Soul++）及其后续油猴移植版（SleazyFork ID: 454120）。在保留上游经典无缝浏览体验的基础上，进行现代浏览器兼容性修复、草稿智能闭环保护、原生深色模式防冲突加固、键盘弹窗联动防护以及全镜像域名配置深度双向同步。
 
 ---
 
-## 📦 仓库版本说明
+## 上游溯源与演进关系
+
+| 项目阶段 | 项目名称 | 开发者 / 维护者 | 状态与说明 |
+| :--- | :--- | :--- | :--- |
+| 原版上游扩展 | soul-plus-plus-chrome-extension | FetchTheMoon (水中捞月) | 经典 Chrome 扩展，由于商店政策限制已下架并归档 |
+| 移植维护版 | 南加北加论坛强化脚本 (凛+) | 遠坂凛 (tousakarin) | 油猴移植版 (SleazyFork 454120)，停更于 v100 |
+| 本项目 (Next) | **SoulPlus-Next (魂+ Next)** | jiozhaoyue | **当前活跃维护**：现代化重构、Bug修复、实时热更、跨镜像同步 |
+
+---
+
+## 核心功能与特性
+
+### 1. 免刷新交互与智能草稿保护
+- 购买免刷新：异步获取帖子售价元数据并在当前视图就地完成购买，避免整页重新加载带来的打断感。
+- 免刷新回帖：异步提交回帖内容，自动定位至新增楼层并无缝更新页面上下文。
+- 智能草稿闭环机制：
+  - 编辑器自动实时将输入内容持久化至本地草稿池，意外关闭标签或切换网络时随时还原。
+  - 在免刷新回帖或普通回帖成功后，自动执行草稿池清理并重置编辑器状态，杜绝以往版本旧草稿残留弹出的顽疾。
+
+### 2. 现代暗黑模式与反色保护
+- 原生声明 color-scheme: dark，统一浏览器原生滚动条、表单按钮和输入框的深色渲染质感。
+- 动态注入 meta 标签 darkreader-lock，防止与 Dark Reader 等第三方反色扩展产生冲突导致文字发白或双重反色。
+- 修复原版 CSS 中属性语法错误（如 color: color:），消除控制台样式解析告警。
+
+### 3. 极速键盘导航与弹窗防误触
+- 支持使用 J 键与 K 键实现上一页与下一页的无延迟快捷翻页。
+- 弹窗上下文感知（Modal Guard）：当处于大图图墙模式（PicWall）、设置控制台（Dialog）或搜索输入状态时，自动抑制快捷键触发，避免看图与交互时发生意外翻页。
+
+### 4. 全镜像域名配置深度同步
+- 南+论坛拥有广泛的镜像域名生态（包括 south-plus.net、south-plus.org、soul-plus.net、north-plus.net、white-plus.net、east-plus.net 等）。
+- 重构配置存储层，优先采用 GM_getValue / GM_setValue 作为跨域单一事实来源，彻底解决以往依赖单一域名 localStorage 导致镜像站切换后偏好设置割裂与丢失的问题。
+
+### 5. 渲染性能优化与 SFW 贤者安全模式
+- 运用现代 CSS content-visibility: auto 特性，长帖子楼层与列表在视口外延迟绘制，有效减小长列表内存消耗并改善高刷屏滚动的帧率稳定性。
+- SFW 贤者安全模式：敏感图片即时滤镜脱敏与头像替换，去除滚动懒加载图片时的明暗闪烁。
+
+---
+
+## 仓库版本矩阵
 
 | 文件名 | 类型 | 说明 |
 | :--- | :--- | :--- |
-| **[`southplus-enhancer.user.js`](southplus-enhancer.user.js)** | **推荐强化版 (v101)** | 包含全部 Bug 修复 + 智能草稿清理 + 跨镜像同步 + 快捷键导航 + 渲染性能优化 |
-| **[`southplus-enhancer.bugfix.user.js`](southplus-enhancer.bugfix.user.js)** | **最小侵入单 Bug 修复版** | 严格保持原版 100% 结构，仅局部修复 Illegal invocation、暗黑样式与购买异常处理 |
-| **[`southplus-enhancer.original.user.js`](southplus-enhancer.original.user.js)** | **上游原版基线 (v100)** | 原作者原始代码镜像存档（零修改），作为基线比对与审计依据 |
+| [soul-plus-next.user.js](soul-plus-next.user.js) | 推荐强化版 (v101) | 包含完整功能：Bug修复、草稿清理、跨镜像同步、快捷键防护、性能优化 |
+| [soul-plus-next.bugfix.user.js](soul-plus-next.bugfix.user.js) | 纯净修复版 (v100.1) | 保持原版最小改动，仅修复 Illegal invocation、Dark Reader 样式与购买异常 |
+| [soul-plus-next.original.user.js](soul-plus-next.original.user.js) | 上游基线存档 (v100) | 原作者原始代码镜像存档（零修改），用于差异比对与合规审查 |
 
 ---
 
-## 📥 安装指南
+## 安装指南
 
-### 前提条件
-请先在浏览器中安装任意一款现代用户脚本管理器：
-- [Tampermonkey (篡改猴)](https://www.tampermonkey.net/)
-- [ScriptCat (脚本猫)](https://docs.scriptcat.org/)
-- [Violentmonkey (暴力猴)](https://violentmonkey.github.io/)
+### 前提环境
+请在支持 Userscript 的现代浏览器中安装任意一款脚本管理器：
+- [Tampermonkey](https://www.tampermonkey.net/)
+- [ScriptCat](https://docs.scriptcat.org/)
+- [Violentmonkey](https://violentmonkey.github.io/)
 
-### 安装链接
-- **增强重构版 (推荐)**：
-  - 点击安装：[southplus-enhancer.user.js](https://raw.githubusercontent.com/jiozhaoyue/southplus-script/main/southplus-enhancer.user.js)
-- **单 Bug 修复版 (纯净)**：
-  - 点击安装：[southplus-enhancer.bugfix.user.js](https://raw.githubusercontent.com/jiozhaoyue/southplus-script/main/southplus-enhancer.bugfix.user.js)
+### 安装地址与镜像源
 
----
+#### 推荐强化版 (SoulPlus-Next)
+- [GitHub 官方直链 (即时更新)](https://raw.githubusercontent.com/jiozhaoyue/soul-plus-next/main/soul-plus-next.user.js)
+- [jsDelivr 全球 CDN 镜像](https://cdn.jsdelivr.net/gh/jiozhaoyue/soul-plus-next@main/soul-plus-next.user.js)
 
-## 🛠️ 脚本市场发布指南 (Publishing Guide)
-
-### 1. 发布到 Sleazy Fork (Greasy Fork 成人分区)
-> **注意**：由于南+论坛涉及成人内容，Greasy Fork 会将该脚本自动归类或要求发布至 **Sleazy Fork**。
-1. 登录 [Sleazy Fork](https://sleazyfork.org/)。
-2. 点击右上角 **“发布新脚本” (Post a script)**。
-3. 将 [`southplus-enhancer.user.js`](southplus-enhancer.user.js) 的全部内容复制粘贴到脚本代码区。
-4. 填写简短更新说明（如 `v101: 修复免刷新回帖草稿清理、完善跨域同步、快捷键优化`）。
-5. 点击提交即可完成发布。
-
-### 2. 发布到 ScriptCat (脚本猫)
-1. 登录 [ScriptCat 脚本市场](https://scriptcat.org/)。
-2. 点击 **“控制台” -> “发布脚本”**。
-3. 粘贴 [`southplus-enhancer.user.js`](southplus-enhancer.user.js) 内容，脚本猫会自动识别元数据（`@name`, `@version`, `@match` 等）。
-4. 勾选开源协议 `MIT` 并点击发布。
+#### 纯净修复版 (Bugfix Only)
+- [GitHub 官方直链](https://raw.githubusercontent.com/jiozhaoyue/soul-plus-next/main/soul-plus-next.bugfix.user.js)
+- [jsDelivr 全球 CDN 镜像](https://cdn.jsdelivr.net/gh/jiozhaoyue/soul-plus-next@main/soul-plus-next.bugfix.user.js)
 
 ---
 
-## 📝 更新日志 (Changelog)
+## 实时更新机制说明
 
-### v101 (2026-11)
-- **重构与命名规范化**：脚本与仓库全面采用英文标准命名 `southplus-enhancer.user.js`，避免 URL 编码问题。
-- **草稿自动清理**：修复免刷新回帖成功后无法触发原生表单提交事件导致草稿无法清除的 Bug。
-- **快捷键交互防护**：在图墙（PicWall）或设置弹窗开启时自动抑制 J/K 翻页，防止后台误跳页。
-- **跨镜像深度同步**：改进 `createLocalStorageProperty`，优先通过 `GM_getValue` 保证各镜像域名配置一致性。
-- **元数据与多语言**：适配中英文双语元数据标签，移除原作者旧覆盖更新源，适配 GitHub Releases 与各大脚本市场。
+为了保证脚本在发布后能够第一时间获取修复与功能更新，本项目采用全链路热更机制：
+
+1. 脚本元数据直连官方源：
+   在脚本头部内建 @updateURL 与 @downloadURL，统一指向 GitHub main 分支的原始发布地址。
+2. 自动化发布流：
+   每次向 main 分支提交代码后，GitHub Actions 自动化流水线将执行代码合规检测并构建 Release 产物。
+3. 客户端静默/自动感知：
+   当脚本管理器（如 Tampermonkey / ScriptCat）执行例行检查或用户手动点击检查更新时，客户端将实时拉取最新版本完成无缝升级。
+
+---
+
+## 脚本市场发布操作指南
+
+### 1. 发布至 Sleazy Fork (Greasy Fork 成人分区)
+注意：由于论坛涉及成人内容，相关脚本在 Greasy Fork 体系下需归类于 Sleazy Fork。
+1. 登录 Sleazy Fork 平台。
+2. 点击右上角 "发布新脚本" (Post a script)。
+3. 打开本地 soul-plus-next.user.js，全选复制并粘贴到脚本源码输入框。
+4. 元数据标签 (@name, @version, @match, @updateURL 等) 将被自动解析。
+5. 填写版本更新说明并确认发布。
+
+### 2. 发布至 ScriptCat (脚本猫市场)
+1. 登录 ScriptCat 开发者控制台。
+2. 进入 "控制台" -> "发布脚本"。
+3. 粘贴 soul-plus-next.user.js 源码，确认识别的权限清单与域名列表。
+4. 勾选 MIT 开源许可证，提交即可在脚本猫市场公开展示。
+
+---
+
+## 支持的论坛镜像域名列表
+
+脚本适配以下全部论坛官方及镜像域名：
+- south-plus.net / south-plus.org
+- soul-plus.net
+- north-plus.net
+- white-plus.net
+- east-plus.net
+- level-plus.net
+- snow-plus.net
+- spring-plus.net
+- summer-plus.net
+- blue-plus.net
+- imoutolove.me
+
+---
+
+## 更新日志
+
+### v101
+- 项目命名全面升级为 SoulPlus-Next (魂+ Next)，致敬原上游扩展 soul-plus-plus。
+- 修复免刷新回帖成功后原生表单提交事件拦截导致的草稿无法清理问题。
+- 快捷键翻页集成弹窗防误触保护，在图墙浏览或弹出设置面板时自动屏蔽 J/K 跳转。
+- 跨镜像配置存储层重构，采用 GM 存储作为主数据源，保障多镜像域数据无缝同步。
+- 脚本配置全自动化热更链接与双语元数据标签。
 
 ### v100 (基线修复)
-- 修复 Edge 浏览器扩展拦截环境下的 `TypeError: Failed to execute 'fetch' on 'Window': Illegal invocation`。
-- 修复暗黑模式 `color: color:` 语法错误与 Dark Reader 插件二次反色冲突。
-- 购买异常时显示错误信息而不强行整页刷新。
+- 修复 Chromium / Edge 浏览器环境下因脚本拦截导致的 Illegal invocation 异步错误。
+- 修复暗黑主题中 color 属性语法错误，注入防反色标记解决与 Dark Reader 的渲染冲突。
+- 优化购买逻辑，当返回异常信息时显示详细提示而非强行整页重载。
 
 ---
 
-## ⚖️ 开源协议 (License)
-本项目遵循 [MIT License](LICENSE)。原版代码版权归原作者 **遠坂凛** 所有，改版增强与维护由 **jiozhaoyue** 负责。
+## 开源许可与致谢
+
+- 本项目基于 [MIT License](LICENSE) 开源。
+- 致敬经典 Chrome 扩展 soul-plus-plus 原作者 FetchTheMoon。
+- 感谢油猴移植版维护者 遠坂凛。
+- 后续维护、重构与持续更新由 jiozhaoyue 负责。

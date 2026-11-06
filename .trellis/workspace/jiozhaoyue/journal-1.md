@@ -85,3 +85,24 @@ Topics: [.trellis/research/2026-11-06-public-release-enhancer.md](../../research
 ### Status
 
 [OK] **Completed**
+
+
+## Session 3: SoulPlus-Next Public Release and Upstream Realignment
+<!-- trellis-session: v=2 fp=bffad3da72eeef50 -->
+
+**Date**: 2026-11-06
+**Task**: SoulPlus-Next Public Release and Upstream Realignment
+**Branch**: `main`
+
+### Summary
+
+Renamed project to SoulPlus-Next, updated userscript metadata and URLs, eliminated emojis, created GitHub Actions release workflow, aligned with upstream soul-plus-plus
+Topics: [.trellis/research/2026-11-06-public-release-enhancer.md](../../research/2026-11-06-public-release-enhancer.md)
+
+### Git Commits
+
+(No commits - planning session)
+
+### Status
+
+[OK] **Completed**

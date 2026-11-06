@@ -1,7 +1,8 @@
 MIT License
 
-Copyright (c) 2026 jiozhaoyue (Enhancements & Maintenance)
-Copyright (c) 2022-2024 遠坂凛 (Original Script)
+Copyright (c) 2026 jiozhaoyue (Enhancements, Bugfixes & Modernization)
+Copyright (c) 2022-2024 遠坂凛 (Tampermonkey userscript port)
+Copyright (c) 2020-2024 FetchTheMoon (Original soul-plus-plus extension)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

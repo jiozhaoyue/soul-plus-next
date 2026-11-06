@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name         南加北加论坛强化脚本(凛+)
-// @name:zh-CN   南加北加论坛强化脚本(凛+ 增强重构版)
-// @name:en      South Plus Forum Enhancer (Rin+)
+// @name         魂+ Next (SoulPlus-Next) 南加北加论坛体验套件
+// @name:zh-CN   魂+ Next (SoulPlus-Next) 南加北加论坛体验套件
+// @name:en      SoulPlus-Next - South Plus Forum Experience Suite
 // @version      101
-// @description  加强东南北+功能: 修复Bug、快捷键翻页、草稿自动保存、多域名配置同步、性能优化等
-// @description:zh-CN 加强东南北+功能: 修复Bug、快捷键翻页、草稿自动保存、多域名配置同步、性能优化等
-// @description:en Enhancement userscript for South-Plus / North-Plus forums: bug fixes, keyboard navigation, draft auto-save, multi-domain config sync, and performance boosts.
-// @author       jiozhaoyue (based on 遠坂凛)
-// @namespace    https://github.com/jiozhaoyue/southplus-script
+// @description  继承原上游 soul-plus-plus 扩展与增强重构：免刷新回帖/购买、无缝楼层翻页、SFW贤者模式、沉浸暗黑、跨镜像配置同步与键盘导航
+// @description:zh-CN 继承原上游 soul-plus-plus 扩展与增强重构：免刷新回帖/购买、无缝楼层翻页、SFW贤者模式、沉浸暗黑、跨镜像配置同步与键盘导航
+// @description:en Successor to soul-plus-plus extension: seamless browsing, zero-refresh replies/purchases, SFW sage mode, dark theme, cross-mirror config sync, and keyboard navigation.
+// @author       jiozhaoyue (based on soul-plus-plus & 遠坂凛)
+// @namespace    https://github.com/jiozhaoyue/soul-plus-next
 // @license      MIT
 // @icon         data:image/gif;base64,R0lGODlhEAAQAKIAAKIbG8dXV/339+atrfHMzOGXl9d3d7QxMSH5BAAAAAAALAAAAAAQABAAAANSKBPX0Ma8MBR7GBA5y81AdIihgxWW+I0PsURVAQoXNQwtB0EolYOTza0HPI0EtCKug5RlAsjZwtQSPJGEqIljGGa3IN+EJT55XDnUdHwgOCiCBAA7
 // @grant        unsafeWindow
@@ -50,7 +50,10 @@
 // @match        *://*.imoutolove.me/*
 // @match        *://imoutolove.me/*
 // @run-at       document-start
-// @supportURL   https://github.com/jiozhaoyue/southplus-script/issues
+// @homepageURL  https://github.com/jiozhaoyue/soul-plus-next
+// @supportURL   https://github.com/jiozhaoyue/soul-plus-next/issues
+// @updateURL    https://raw.githubusercontent.com/jiozhaoyue/soul-plus-next/main/soul-plus-next.user.js
+// @downloadURL  https://raw.githubusercontent.com/jiozhaoyue/soul-plus-next/main/soul-plus-next.user.js
 // ==/UserScript==
 
 /* jshint undef: true, unused: true */

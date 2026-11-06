@@ -1,9 +1,13 @@
 // ==UserScript==
-// @name         南加北加论坛强化脚本(凛+)
-// @version      100
-// @description  加强东南北+功能: 太多了请看功能简介
-// @author       遠坂凛
-// @namespace    tousakarin
+// @name         魂+ Next Bugfix (SoulPlus-Next 纯净修复版)
+// @name:zh-CN   魂+ Next Bugfix (SoulPlus-Next 纯净修复版)
+// @name:en      SoulPlus-Next Bugfix (Pure Bugfix Edition)
+// @version      100.1
+// @description  魂+ Next 纯净 Bug 修复版：针对原版进行最小改动，修复 Illegal invocation 报错、Dark Reader 反色冲突与购买异常
+// @description:zh-CN 魂+ Next 纯净 Bug 修复版：针对原版进行最小改动，修复 Illegal invocation 报错、Dark Reader 反色冲突与购买异常
+// @description:en Pure minimal bugfix edition for SoulPlus-Next / soul-plus-plus: fixes illegal invocation fetch errors, dark reader styling, and purchase exceptions.
+// @author       jiozhaoyue (based on soul-plus-plus & 遠坂凛)
+// @namespace    https://github.com/jiozhaoyue/soul-plus-next
 // @license      MIT
 // @icon         data:image/gif;base64,R0lGODlhEAAQAKIAAKIbG8dXV/339+atrfHMzOGXl9d3d7QxMSH5BAAAAAAALAAAAAAQABAAAANSKBPX0Ma8MBR7GBA5y81AdIihgxWW+I0PsURVAQoXNQwtB0EolYOTza0HPI0EtCKug5RlAsjZwtQSPJGEqIljGGa3IN+EJT55XDnUdHwgOCiCBAA7
 // @grant        unsafeWindow
@@ -46,6 +50,10 @@
 // @match        *://*.imoutolove.me/*
 // @match        *://imoutolove.me/*
 // @run-at       document-start
+// @homepageURL  https://github.com/jiozhaoyue/soul-plus-next
+// @supportURL   https://github.com/jiozhaoyue/soul-plus-next/issues
+// @updateURL    https://raw.githubusercontent.com/jiozhaoyue/soul-plus-next/main/soul-plus-next.bugfix.user.js
+// @downloadURL  https://raw.githubusercontent.com/jiozhaoyue/soul-plus-next/main/soul-plus-next.bugfix.user.js
 // ==/UserScript==
 
 /* jshint undef: true, unused: true */
