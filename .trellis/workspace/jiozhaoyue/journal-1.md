@@ -62,3 +62,26 @@ Topics: [.trellis/research/2026-11-06-public-release-enhancer.md](../../research
 ### Status
 
 [OK] **Completed**
+
+
+## Session 2: 转公开与v101版本增强发布准备
+<!-- trellis-session: v=2 fp=9c4f6818e6d0a289 -->
+
+**Date**: 2026-11-06
+**Task**: 转公开与v101版本增强发布准备
+**Branch**: `main`
+
+### Summary
+
+核查上游v100基线、重构英文命名southplus-enhancer、修复免刷新回帖草稿残留Bug、强化跨域配置同步与弹窗快捷键保护、配置.gitignore与开源转公开文件
+Topics: [.trellis/research/2026-11-06-public-release-enhancer.md](../../research/2026-11-06-public-release-enhancer.md)
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `9affc7b` | feat: release v101 with bugfixes, english naming, and public open source setup |
+
+### Status
+
+[OK] **Completed**
