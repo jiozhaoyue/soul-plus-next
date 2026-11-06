@@ -1,0 +1,44 @@
+# AI Agent tool configurations & cache
+.agent/
+.agents/
+.claude/
+.codebuddy/
+.codex/
+.cursor/
+.devin/
+.dsh/
+.factory/
+.gemini/
+.grok/
+.kilocode/
+.kimi-code/
+.kiro/
+.omp/
+.opencode/
+.pi/
+.qoder/
+.reasonix/
+.snow/
+.trae/
+.zcode/
+
+# Trellis runtime & private developer state
+.trellis/.runtime/
+.trellis/.developer
+.trellis/scripts/common/__pycache__/
+__pycache__/
+*.pyc
+
+# Operating System & Editor artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary & Log files
+*.log
+*.tmp
+*.bak

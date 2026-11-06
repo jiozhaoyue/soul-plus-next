@@ -1,0 +1,30 @@
+{
+  "id": "minimal-bugfix-and-align",
+  "name": "minimal-bugfix-and-align",
+  "title": "Minimal-invasion bugfix version and align enhanced version",
+  "description": "Pull upstream original source, create minimal-invasion bugfix-only version, and align bugfixes in enhanced version with author updated to jiozhaoyue",
+  "status": "completed",
+  "dev_type": "bugfix",
+  "scope": null,
+  "package": null,
+  "priority": "P1",
+  "creator": "jiozhaoyue",
+  "assignee": "jiozhaoyue",
+  "createdAt": "2026-10-13",
+  "completedAt": "2026-10-13",
+  "branch": null,
+  "base_branch": "main",
+  "worktree_path": null,
+  "commit": null,
+  "pr_url": null,
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [
+    "南加北加论坛强化脚本(凛%2B).original.user.js",
+    "南加北加论坛强化脚本(凛%2B).bugfix.user.js",
+    "南加北加论坛强化脚本(凛%2B).user.js"
+  ],
+  "notes": "Completed minimal-invasion bugfix version and aligned enhanced version",
+  "meta": {}
+}

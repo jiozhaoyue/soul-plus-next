@@ -1,0 +1,28 @@
+{
+  "id": "10-12-fix-and-enhance-script",
+  "name": "10-12-fix-and-enhance-script",
+  "title": "Fix fetch Illegal Invocation, purchase refresh, dark mode and enhance features",
+  "description": "Fix fetch Illegal Invocation, purchase failure auto-reload, dark mode conflicts, and enhance cross-domain sync, performance and shortcuts",
+  "status": "completed",
+  "dev_type": "feature",
+  "scope": null,
+  "package": null,
+  "priority": "P1",
+  "creator": "jiozhaoyue",
+  "assignee": "jiozhaoyue",
+  "createdAt": "2026-10-12",
+  "completedAt": "2026-10-12",
+  "branch": null,
+  "base_branch": null,
+  "worktree_path": null,
+  "commit": null,
+  "pr_url": null,
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [
+    "南加北加论坛强化脚本(凛%2B).user.js"
+  ],
+  "notes": "Fix and enhance script per user request",
+  "meta": {}
+}
